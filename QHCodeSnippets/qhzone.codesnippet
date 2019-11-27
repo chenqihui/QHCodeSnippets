@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>qhzone</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)dealloc {
+#if DEBUG
+    NSLog(@"%s", __FUNCTION__);
+#endif
+}
+
+#pragma mark - Private
+
+
+#pragma mark - Public
+
+
+#pragma mark - &lt;#SystemDelegate#&gt;
+
+
+#pragma mark - &lt;#CustomDelegate#&gt;
+
+
+#pragma mark - Util
+
+
+#pragma mark - Action
+
+
+#pragma mark - Get
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B286C5F9-A913-4BDB-9B5B-9C8CCEDE91AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>代码区域</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SH Code Zone</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

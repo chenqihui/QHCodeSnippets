@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>qhcv</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#View#&gt;Cell : UICollectionViewCell
+
+@end
+
+@interface &lt;#View#&gt;Cell ()
+
+@end
+
+@implementation &lt;#View#&gt;Cell
+
+- (void)show:(NSDictionary *)data {
+}
+
+@end
+
+
+&lt;UICollectionViewDataSource, UICollectionViewDelegate&gt;
+
+@property (nonatomic, strong) UICollectionView *mainCV;
+@property (nonatomic, strong) NSArray *data;
+
+- (void)p_getData {
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        strongSelf.data = data;
+        [strongSelf.mainCV reloadData];
+    });
+}
+
+- (void)p_addCollectionV {
+    CGFloat w = &lt;#0#&gt;;
+    CGFloat h = &lt;#0#&gt;;
+    UICollectionViewFlowLayout *layout = ({
+        layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(w, h);
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 0;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout;
+    });
+    UICollectionView *mCV = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    mCV.backgroundColor = [UIColor clearColor];
+    mCV.dataSource = self;
+    mCV.delegate = self;
+    mCV.alwaysBounceHorizontal = NO;
+    mCV.showsHorizontalScrollIndicator = NO
+    [mCV registerNib:[UINib nibWithNibName:@"&lt;#View#&gt;Cell" bundle:nil] forCellWithReuseIdentifier:@"&lt;#View#&gt;Cell"];
+    [mCV registerClass:[&lt;#View#&gt;Cell class] forCellWithReuseIdentifier:@"k&lt;#View#&gt;Cell"];
+    [&lt;#SuperView#&gt; addSubview:mCV];
+    &lt;#Frame/Masonry: mCV.frame = [UIScreen mainScreen].bounds;#&gt;
+    _mainCV = mCV;
+}
+
+#pragma mark - UICollectionViewDataSource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _data.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    &lt;#View#&gt;Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"&lt;#View#&gt;Cell" forIndexPath:indexPath];
+    &lt;#NSDictionary *data = _data[indexPath.row];#&gt;
+    &lt;#[cell show:data];#&gt;
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    &lt;#NSDictionary *data = _data[indexPath.row];#&gt;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C1DF7AB9-E807-438A-B96D-B2AD6436FBAF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建 UICollectionView</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UICollectionView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
